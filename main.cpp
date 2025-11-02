@@ -1,28 +1,29 @@
 #include <iostream>
 
+#include "Student.h"
+
 int main() {
     std::cout << "Welcome to the Smart Study Program!" << std::endl;
     bool goodbye = false;
     while (!goodbye) {
         std::cout << "What would you like to do?" << std::endl;
         std::cout << "1. Add Student" << std::endl;
-        std::cout << "2. Import Data" << std::endl;
-        std::cout << "3. Export Data" << std::endl;
-        std::cout << "4. Create Pairs" << std::endl;
-        std::cout << "5. Quit" << std::endl;
+        std::cout << "2. Generate Students" << std::endl;
+        std::cout << "3. Import Data" << std::endl;
+        std::cout << "4. Export Data" << std::endl;
+        std::cout << "5. Create Pairs" << std::endl;
+        std::cout << "6. Quit" << std::endl;
         int choice = 0;
         std::string choiceStr;
         std::cin >> choiceStr;
         try {
             choice = std::stoi(choiceStr);
-        } catch (std::invalid_argument &_)
-        {
+        } catch (std::invalid_argument &_) {
             std::cout << "Please enter a number!" << std::endl;
             continue;
         }
 
-        switch (choice)
-        {
+        switch (choice) {
             case 1:
                 // TODO
                 break;
@@ -36,6 +37,9 @@ int main() {
                 // TODO
                 break;
             case 5:
+                // TODO
+                break;
+            case 6:
                 goodbye = true;
                 std::cout << "Goodbye!" << std::endl;
                 break;

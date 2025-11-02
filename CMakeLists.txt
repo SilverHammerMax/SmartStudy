@@ -3,4 +3,6 @@ project(SmartStudy)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(SmartStudy main.cpp)
+add_executable(SmartStudy main.cpp
+        Student.cpp
+        Student.h)
