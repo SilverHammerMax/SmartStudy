@@ -1,6 +1,6 @@
 #include "Student.h"
 
-Student::Student(int id, std::string name, std::string major, std::array<bool, 11> availablity)
+Student::Student(std::string name, std::string id, std::string major, std::array<bool, 11> availablity)
 {
     this->id = id;
     this->name = name;
@@ -8,7 +8,7 @@ Student::Student(int id, std::string name, std::string major, std::array<bool, 1
     this->availability = availablity;
 }
 
-int Student::getId()
+std::string Student::getId()
 {
     return this->id;
 }
