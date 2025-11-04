@@ -27,3 +27,16 @@ bool Student::getAvailability(int period)
 {
     return this->availability[period];
 }
+
+int Student::getCompatibilityScore(Student &otherStudent) {
+    int score = 0;
+    if (this->major == otherStudent.getMajor()) {
+        score += 3;
+    }
+    for (int i = 0; i < 11; i++) {
+        if (this->availability[i] == otherStudent.getAvailability(i)) {
+            score += 1;
+        }
+    }
+    return score;
+}

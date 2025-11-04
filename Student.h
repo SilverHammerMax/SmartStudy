@@ -20,6 +20,7 @@ public:
     std::string getName();
     std::string getMajor();
     bool getAvailability(int period);
+    int getCompatibilityScore(Student& otherStudent);
 };
 
 
