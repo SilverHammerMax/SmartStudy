@@ -3,7 +3,7 @@
 vector<Match> greedyAlgorithm(vector<Student> groupA, vector<Student> groupB) {
     vector<Match> matches;
     bool matched[groupB.size()] = {false}; //array to check who in groupB has already matched
-    const int MAX_SCORE = 13;
+    const int MAX_SCORE = 16;
 
     //iterating through each student in group A
     for (int a = 0; a < groupA.size(); a++) {
