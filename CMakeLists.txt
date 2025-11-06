@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(SmartStudy main.cpp
         Student.cpp
-        Student.h)
+        Student.h
+        Greedy.cpp
+        Greedy.h)
