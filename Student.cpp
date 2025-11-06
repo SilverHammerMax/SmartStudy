@@ -31,10 +31,10 @@ bool Student::getAvailability(int period)
 int Student::getCompatibilityScore(Student &otherStudent) {
     int score = 0;
     if (this->major == otherStudent.getMajor()) {
-        score += 3;
+        score += 5;
     }
     for (int i = 0; i < 11; i++) {
-        if (this->availability[i] == otherStudent.getAvailability(i)) {
+        if (this->availability[i] == 1 && otherStudent.getAvailability(i) == 1) {
             score += 1;
         }
     }
