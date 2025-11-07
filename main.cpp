@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <fstream>
 
 #include "Student.h"
 
@@ -64,10 +65,20 @@ int main() {
                 // TODO
                 break;
             case 3:
-                // TODO
+                {
+                    std::ifstream inputFile("students.json");
+                    nlohmann::json inputJson;
+                    inputFile >> inputJson;
+                    students = inputJson.get<std::vector<Student>>();
+                }
                 break;
             case 4:
-                // TODO
+                {
+                    std::ofstream outputFile("students.json");
+                    nlohmann::json outputJson = students;
+                    outputFile << std::setw(4) << outputJson << std::endl;
+                    std::cout << "Student Data Exported!" << std::endl;
+                }
                 break;
             case 5:
                 // TODO

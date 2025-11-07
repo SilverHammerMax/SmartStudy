@@ -8,22 +8,22 @@ Student::Student(std::string name, std::string id, std::string major, std::array
     this->availability = availablity;
 }
 
-std::string Student::getId()
+std::string Student::getId() const
 {
     return this->id;
 }
 
-std::string Student::getName()
+std::string Student::getName() const
 {
     return this->name;
 }
 
-std::string Student::getMajor()
+std::string Student::getMajor() const
 {
     return this->major;
 }
 
-bool Student::getAvailability(int period)
+bool Student::getAvailability(int period) const
 {
     return this->availability[period];
 }
