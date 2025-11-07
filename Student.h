@@ -2,6 +2,7 @@
 
 #include <string>
 #include <array>
+#include <nlohmann/json.hpp>
 
 #ifndef SMARTSTUDY_STUDENT_H
 #define SMARTSTUDY_STUDENT_H
@@ -21,6 +22,7 @@ public:
     std::string getMajor() const;
     bool getAvailability(int period) const;
     int getCompatibilityScore(Student& otherStudent);
+    NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Student, name, id, major, availability);
 };
 
 
