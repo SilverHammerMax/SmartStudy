@@ -65,7 +65,12 @@ int main() {
                 // TODO
                 break;
             case 3:
-                // TODO
+                {
+                    std::ifstream inputFile("students.json");
+                    nlohmann::json inputJson;
+                    inputFile >> inputJson;
+                    students = inputJson.get<std::vector<Student>>();
+                }
                 break;
             case 4:
                 {
