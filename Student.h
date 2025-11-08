@@ -16,7 +16,7 @@ private:
     std::string major;
     std::array<bool, 11> availability;
 public:
-    Student(std::string id, std::string name, std::string major, std::array<bool, 11> availablility);
+    Student(std::string name, std::string id, std::string major, std::array<bool, 11> availablility);
     Student() = default;
     std::string getId() const;
     std::string getName() const;

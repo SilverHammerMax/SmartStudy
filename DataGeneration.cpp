@@ -15,7 +15,7 @@ std::vector<Student> createData(int population) {
         for (int j = 0; j < 11; j++) {
             avail[j] = bool_type(gen);
         }
-        Student new_student(genId(i), genName(i),pickMajor(major(gen)),avail);
+        Student new_student(genName(i), genId(i),pickMajor(major(gen)),avail);
         data.push_back(new_student);
     }
 

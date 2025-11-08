@@ -2,6 +2,7 @@
 #include <vector>
 #include <fstream>
 
+#include "DataGeneration.h"
 #include "Student.h"
 
 int main() {
@@ -62,7 +63,13 @@ int main() {
                 }
                 break;
             case 2:
-                // TODO
+                {
+                    std::cout << "How many student's would you like to generate? ";
+                    std::string input;
+                    std::getline(std::cin, input);
+                    int numberOfStudents = stoi(input);
+                    students = createData(numberOfStudents);
+                }
                 break;
             case 3:
                 {
