@@ -39,7 +39,15 @@ int main() {
                     std::cout << "Student's ID: ";
                     std::string idString;
                     std::getline(std::cin, idString);
-                    int id = stoi(idString);
+                    int id;
+                    try
+                    {
+                        id = stoi(idString);
+                    } catch (std::invalid_argument &_)
+                    {
+                        std::cout << "Student ID's should be numbers!" << std::endl;
+                        break;
+                    }
 
                     std::cout << "Student's Major: ";
                     std::string major;
@@ -51,16 +59,35 @@ int main() {
                     std::string input;
                     std::getline(std::cin, input);
                     std::string current = "";
+                    bool error = false;
                     for (char c : input)
                     {
                         if (c == ' ')
                         {
-                            availability[stoi(current)] = true;
+                            try
+                            {
+                                availability[stoi(current)] = true;
+                            } catch (std::invalid_argument &_)
+                            {
+                                error = true;
+                            }
                             current = "";
                         } else
                             current += c;
                     }
-                    availability[stoi(current)] = true;
+                    if (error)
+                    {
+                        std::cout << "List of periods is malformed!" << std::endl;
+                        break;
+                    }
+                    try
+                    {
+                        availability[stoi(current)] = true;
+                    } catch (std::invalid_argument &_)
+                    {
+                        std::cout << "List of periods is malformed!" << std::endl;
+                        break;
+                    }
                     Student newStudent(name, id, major, availability);
                     students.push_back(newStudent);
                 }
@@ -70,7 +97,15 @@ int main() {
                     std::cout << "How many student's would you like to generate? ";
                     std::string input;
                     std::getline(std::cin, input);
-                    int numberOfStudents = stoi(input);
+                    int numberOfStudents;
+                    try
+                    {
+                        numberOfStudents = stoi(input);
+                    } catch (std::invalid_argument &_)
+                    {
+                        std::cout << "Please enter a number!" << std::endl;
+                        break;
+                    }
                     students = createData(numberOfStudents);
                 }
                 break;
