@@ -15,7 +15,7 @@ std::vector<Student> createData(int population) {
         for (int j = 0; j < 11; j++) {
             avail[j] = bool_type(gen);
         }
-        Student new_student(genName(i), genId(i),pickMajor(major(gen)),avail);
+        Student new_student(genName(i), i,pickMajor(major(gen)),avail);
         data.push_back(new_student);
     }
 
@@ -35,7 +35,7 @@ std::vector<Student> createData(int population, int seed) {
         for (int j = 0; j < 11; j++) {
             avail[j] = bool_type(gen);
         }
-        Student new_student(genId(i), genName(i),pickMajor(major(gen)),avail);
+        Student new_student(genName(i), i,pickMajor(major(gen)),avail);
         data.push_back(new_student);
     }
 
@@ -49,13 +49,6 @@ std::string genName(int index) {
     int f = index % SIZE_NAMES;
     int l = (index / SIZE_NAMES + f) % SIZE_NAMES;
     return (f_names[f] + " " + l_names[l]);
-}
-
-std::string genId(int index) {
-    std::string base = "00000000";
-    std::string Id = std::to_string(index);
-    base.replace((8 - Id.length() % 8),7, Id);
-    return base;
 }
 
 std::string pickMajor(int index) {

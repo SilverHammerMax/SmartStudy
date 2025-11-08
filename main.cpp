@@ -3,6 +3,8 @@
 #include <fstream>
 
 #include "DataGeneration.h"
+#include "GaleShapley.h"
+#include "Greedy.h"
 #include "Student.h"
 
 int main() {
@@ -35,8 +37,9 @@ int main() {
                     std::getline(std::cin, name);
 
                     std::cout << "Student's ID: ";
-                    std::string id;
-                    std::getline(std::cin, id);
+                    std::string idString;
+                    std::getline(std::cin, idString);
+                    int id = stoi(idString);
 
                     std::cout << "Student's Major: ";
                     std::string major;
@@ -88,7 +91,22 @@ int main() {
                 }
                 break;
             case 5:
-                // TODO
+                {
+                    auto midpoint = students.begin() + students.size() / 2;
+                    std::vector<Student> groupOne(students.size()/2);
+                    std::vector<Student> groupTwo(students.size()/2);
+                    copy(students.begin(), midpoint, groupOne.begin());
+                    copy(midpoint, students.end(), groupTwo.begin());
+                    std::vector<Match> greedyPairs = greedyAlgorithm(groupOne, groupTwo);
+                    std::vector<Match> galeShapelyPairs = galeShapleyAlgorithm(groupOne, groupTwo);
+                    std::ofstream greedyOutput("greedyPairs.json");
+                    std::ofstream galeShapelyOutput("galeShapelyPairs.json");
+                    nlohmann::json greedyJson = greedyPairs;
+                    nlohmann::json galeShapelyJson = galeShapelyPairs;
+                    greedyOutput << std::setw(4) << greedyJson << std::endl;
+                    galeShapelyOutput << std::setw(4) << galeShapelyJson << std::endl;
+                    std::cout << "Student Pairs Exported!" << std::endl;
+                }
                 break;
             case 6:
                 goodbye = true;

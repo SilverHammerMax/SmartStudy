@@ -17,7 +17,5 @@ std::vector<Student> createData(int population, int seed);
 
 //gets a unique (for index<size^2) combination of first and last name
 std::string genName(int index);
-//creates an id in the form of (index) + 0...0 such that the Id is 8 digits long
-std::string genId(int index);
 //picks major based off of given index
 std::string pickMajor(int index);

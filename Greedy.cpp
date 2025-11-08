@@ -24,7 +24,7 @@ vector<Match> greedyAlgorithm(vector<Student> groupA, vector<Student> groupB) {
                 break;
             }
         }
-        matches.push_back({a, bestMatch.first});
+        matches.push_back({groupA[a].getId(), groupB[bestMatch.first].getId()});
         matched[bestMatch.first] = true;
     }
     return matches;

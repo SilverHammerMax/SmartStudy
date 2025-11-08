@@ -8,5 +8,7 @@ add_executable(SmartStudy main.cpp
         Student.h
         DataGeneration.cpp
         DataGeneration.h
+        GaleShapley.cpp
+        GaleShapley.h
         Greedy.cpp
         Greedy.h)
