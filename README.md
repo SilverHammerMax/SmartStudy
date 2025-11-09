@@ -23,6 +23,7 @@ To generate the students, use the second option in the menu. The program will pr
 ### Importing/Exporting Students
 Because it is tedious to add students one at a time using the first option, the program allows for importing and exporting all of the students in JSON format.
 To import students, put all of the student information in a JSON file called students.json in the directory the program is being run from and then choose the third option. This will overwrite the students already added.
+
 To export the students, choose the fourth option. The student information will be in a file called students.json at the directory the program is being run from. This will overwrite any students.json file that exists in that location.
 
 ### Creating the Pairs
